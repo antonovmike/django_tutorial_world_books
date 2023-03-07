@@ -8,7 +8,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    # list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
     list_display = ('last_name', 'first_name')
     fields = ['last_name', 'first_name', ('date_of_birth', 'date_of_death')]
 
@@ -20,13 +19,12 @@ class BooksInstanceInline(admin.TabularInline):
 @admin.register(Book)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('title', 'display_author', 'genre', 'language', 'isbn')
-    # list_filter = ('genre', 'author')
+    list_filter = ('genre', 'author')
     inlines = [BooksInstanceInline]
 
 
 @admin.register(BookInstance)
 class AuthorAdmin(admin.ModelAdmin):
-    # list_display = ('book', 'inv_nom', 'imprint', 'status', 'due_back')
     list_filter = ('book', 'status')
     fieldsets = (
         ('Экземпляр книги', {

@@ -68,9 +68,6 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('book-detail', args={str(self.id)})
 
-    # class Meta:
-    #     verbose_name = "Название книги"
-
 
 class Status(models.Model):
     name = models.CharField(max_length=20,
