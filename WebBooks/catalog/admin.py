@@ -21,8 +21,16 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('book', 'inv_nom', 'imprint', 'status', 'due_back')
+    # list_display = ('book', 'inv_nom', 'imprint', 'status', 'due_back')
     list_filter = ('book', 'status')
+    fieldsets = (
+        ('Экземпляр книги', {
+            'fields': ('book', 'imprint', 'inv_nom')
+        }),
+        ('Статус и окончание его действия', {
+            'fields': ('status', 'due_back')
+        }),
+    )
 
 
 # admin.site.register(Author)
