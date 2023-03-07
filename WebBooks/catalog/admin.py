@@ -3,13 +3,14 @@ from .models import Author, Book, Genre, Language, Status, BookInstance
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
     pass
 
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
+    # list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
+    list_display = ('last_name', 'first_name')
+    fields = ['last_name', 'first_name', ('date_of_birth', 'date_of_death')]
 
 
 @admin.register(Book)
