@@ -14,7 +14,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('title', 'genre', 'language', 'isbn')
+    # list_display = ('title', 'genre', 'language', 'isbn')
+    list_display = ('title', 'display_author', 'genre', 'language', 'isbn')
 
 
 @admin.register(BookInstance)
@@ -22,8 +23,8 @@ class AuthorAdmin(admin.ModelAdmin):
     list_display = ('book', 'inv_nom', 'imprint', 'status', 'due_back')
 
 
-class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'genre', 'language', 'display_author')
+# class BookAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'genre', 'language', 'display_author')
 
 
 # admin.site.register(Author)

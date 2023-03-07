@@ -59,6 +59,9 @@ class Book(models.Model):
                              help_text="Должно содержать 13 символов",
                              verbose_name="ISBN книги")
 
+    def display_author(self):
+        return ', '.join([author.last_name for author in self.author.all()])
+
     def __str__(self):
         return self.title
 
