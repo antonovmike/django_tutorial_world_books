@@ -1,16 +1,17 @@
-(% extends "base_generic.html" %}
+<!--(% extends "base_generic.html" %}-->
 
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/styles.css %}">
+<!--{% load static %}-->
+<!--(% block head %}-->
 
-(% block head %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <img src="{% static 'image/logotip.jpg' %}"
      style="width=:100px; height:100px;"
      align="absmiddle">
     <font size=7, color="blue">Сайт "Мир книг"</font>
-(% endblock %}
+<!--(% endblock %}-->
 
-(% block content %}
+
+<!--(% block content %}-->
 <h1>Главная страница</h1>
 <p>Добро пожаловать в <em>Мир книг</em>, Это очень простой
 веб-сайт, написанный на Django. Разработан на Python
@@ -25,3 +26,4 @@
     <li><strong>Koличecтвo экземпляров книг в заказе:</strong> {{ num_instances_available }}</li>
     <li><strong>Koличecтвo авторов книг:</strong> {{ num_authors }}</li>
 </ul>
+<!--(% endblock %}-->
